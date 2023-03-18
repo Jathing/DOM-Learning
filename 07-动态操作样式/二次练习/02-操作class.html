@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .active {
+        color: red;
+        font-size: 30px;
+        background-color: chocolate;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">我是一个div</div>
+    <button>切换</button>
+    <script>
+      //获取元素
+      var boxEle = document.querySelector('.box');
+      var btnEle = document.getElementsByTagName('button')[0];
+
+      //重命名 将className覆盖掉
+      // boxEle.className = 'active';
+
+      // 掌握
+      boxEle.classList.add('active');
+      boxEle.classList.remove('active');
+
+      //添加点击事件
+      btnEle.onclick = function () {
+        // 掌握
+        //当我们点击的时候,如果类名存在就会删除,类名不存在就添加
+        boxEle.classList.toggle('active');
+
+        // 检测类名是否存在,返回布尔值 true/false 了解
+        console.log(boxEle.classList.contains('active')); 
+      };
+    </script>
+  </body>
+</html>

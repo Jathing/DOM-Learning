@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 50px;
+        }
+
+        #fj {
+            list-style: none;
+        }
+
+        #fj li {
+            float: left;
+            margin-left: 10px;
+        }
+
+        #fj li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-size: 0;
+        }
+
+        #fj li img {
+            width: 100px;
+        }
+
+        #fj li.active {
+            border: 2px solid tomato;
+            box-sizing: border-box;
+        }
+
+        #big_img {
+            margin-left: 10px;
+            width: 540px;
+        }
+
+        #des {
+            margin: 10px;
+            color: orangered;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--大图描述-->
+    <p id="des">蒲公英</p>
+    <!--大图展示-->
+    <img id="big_img" src="images/1.jpg" alt="">
+    <!--小图列表-->
+    <ul id="fj">
+        <li class="active">
+            <a href="images/1.jpg" title="蒲公英">
+                <img src="images/1.jpg" alt="蒲公英">
+            </a>
+        </li>
+        <li>
+            <a href="images/2.jpg" title="热气球">
+                <img src="images/2.jpg" alt="热气球">
+            </a>
+        </li>
+        <li>
+            <a href="images/3.jpg" title="别致小屋">
+                <img src="images/3.jpg" alt="别致小屋">
+            </a>
+        </li>
+        <li>
+            <a href="images/4.jpg" title="高山湖水">
+                <img src="images/4.jpg" alt="高山湖水">
+            </a>
+        </li>
+        <li>
+            <a href="images/5.jpg" title="高速公路">
+                <img src="images/5.jpg" alt="高速公路">
+            </a>
+        </li>
+    </ul>
+
+    <script>
+        // 获取li标签
+        var lis = document.getElementsByTagName('li');
+        // 获取a标签
+        var as = document.getElementsByTagName('a');
+        // 获取大图
+        var big_img = document.getElementById('big_img');
+        // 获取标题
+        var des = document.getElementById('des');
+        // lis[0]
+        // lis[1]
+        // lis[2]
+        // 循环遍历
+        for (let i = 0; i < as.length; i++) {
+            // console.log(i);
+            // 取到每一项，绑定事件
+            as[i].onmouseover = function () {
+                console.log(as[i]);
+
+                // 排他思想
+                // 1)去掉所有li标签的active
+                for (var j = 0; j < lis.length; j++) {
+                    console.log(lis[j]);
+                    lis[j].className = ""
+                }
+                // 2)给当前的li标签添加active类
+                lis[i].className = "active";
+
+                // 3）换图片
+                big_img.src = as[i].href;
+
+                // 4)换标题
+                des.textContent = as[i].title
+            }
+        }
+
+    </script>
+</body>
+
+</html>

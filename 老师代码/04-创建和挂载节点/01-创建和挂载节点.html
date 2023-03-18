@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="father">
+      <div class="son">son</div>
+    </div>
+
+    <script>
+      // 获取元素节点
+      var fatherEle = document.querySelector('.father');
+
+      // 步骤1 ：创建一个元素
+      var h2Ele = document.createElement('h2');
+      console.log(h2Ele);
+      h2Ele.textContent = '我是一个h2标签';
+      console.log(h2Ele);
+
+      // 步骤2：挂载元素
+      // 需要把创建好的h2元素挂载到father元素里面
+      fatherEle.append(h2Ele); //在father节点的末尾挂载节点(内部)
+      fatherEle.prepend(h2Ele); //在father节点的开头挂载节点(内部)
+
+      fatherEle.before(h2Ele); //在father节点的前面(外部)
+      fatherEle.after(h2Ele); //在father节点的后面(外部)
+    </script>
+  </body>
+</html>

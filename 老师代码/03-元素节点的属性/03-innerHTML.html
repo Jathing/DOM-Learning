@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <!-- 我是一个注释 -->
+      我是文本
+      <div class="father">
+        我是文本
+          <h1>我是标题</h1>
+          <p>我是段落</p>
+      </div>
+
+    <script>
+        // innerHTML 属性
+        // 将元素的HTML获取为字符串的格式
+        // 设置元素的内容
+        var bodyChildNodes = document.body.childNodes;//拿到body下的子节点 包含换行和注释节点
+        console.log(bodyChildNodes);
+
+        var divNode = bodyChildNodes[3];//获取div节点
+
+        // 打印出来的结果
+        // <h1>我是标题</h1>
+        // <p>我是段落</p>
+        console.log(divNode.innerHTML);
+
+        // 设置div标签的内容 替换掉原内容
+        divNode.innerHTML = "<strong>我是一个加粗的字体</strong>"
+
+         // 打印出来的结果
+        //  <strong>我是一个加粗的字体</strong>
+        console.log(divNode.innerHTML);
+    </script>
+</body>
+</html>

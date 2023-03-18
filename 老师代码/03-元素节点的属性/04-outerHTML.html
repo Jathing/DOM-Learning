@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <!-- 我是一个注释 -->
+      我是文本
+      <div class="father">
+          <h1>我是标题</h1>
+          <p>我是段落</p>
+      </div>
+
+    <script>
+        // outherHTML 属性
+        // 将元素的HTML获取为字符串的格式
+        // 设置元素的内容
+        var bodyChildNodes = document.body.childNodes;//拿到body下的子节点 包含换行和注释节点
+        console.log(bodyChildNodes);
+
+        var divNode = bodyChildNodes[3];//获取div节点
+
+        // 获取div标签中的内容
+        // outerHTML 和 innerHTML区别？
+        // outerHTML包含自身 innerHTML只能获取到子元素 不包含本身
+
+        // 打印出来的结果
+        //     <div class="father">
+        //       <h1>我是标题</h1>
+        //       <p>我是段落</p>
+        //    </div>
+        console.log(divNode.outerHTML);
+        divNode.outerHTML = '<strong>我是一个加粗的字体</strong>';
+       
+        var divNodes = bodyChildNodes[3];//获取div节点
+        console.log(divNodes);
+        
+    </script>
+</body>
+</html>

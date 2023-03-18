@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- 标准属性和非标准属性 -->
+     <div class="father" title="hehe" id="box" score="100">
+        <div class="son" abc="abc" age="18">
+        </div>
+    </div>
+
+    <!-- 文本框 -->
+    <input type="text" class="ipt1" value="haha">
+
+    <!-- 复选框 -->
+    <input type="checkbox" class="ipt2" checked>
+    <!-- <input type="checkbox" class="ipt2" > -->
+
+    <script>
+        // property属性(以打点的形式存在)
+        // obj 是对象  对象是属性(property)的无序集合,以打点的形式访问
+       
+        // 获取元素
+        var boxEle = document.getElementById('box');
+        var iptEle = document.querySelector('.ipt1');
+        var iptEle2 = document.querySelector('.ipt2');
+
+
+        // 改变property，通过attribute获取的值，会随着改变；
+        // 通过attribute操作修改，property的值会随着改变；（但是input的value修改只能通过property的方法）
+        
+        // 使用attribute方式 改变属性值
+        boxEle.setAttribute("title","xixi");
+
+        console.log(boxEle.title);
+
+        // 通过property的方式 改变属性值
+        boxEle.title = 'heihei'
+
+        console.log(boxEle.getAttribute("title"));//heihei
+
+        // 特殊情况：
+        // input中 ，property和Attribute值不相通，input使用property
+        iptEle.value = "Dom";// 通过property改变了属性值
+        console.log(iptEle.getAttribute("value"));//haha
+        
+        iptEle.setAttribute("value","Bom");
+        console.log(iptEle.value);//Dom
+
+        // 推荐使用property
+        console.log(iptEle2.checked); //不设置返回false
+        console.log(iptEle2.getAttribute("checked"));//null
+        // 如果input里面没有设置checked 那么默认checked是false
+        // 没有自己手动设置的情况下，通过getAttribute获取到的是null
+
+    </script>
+</body>
+</html>

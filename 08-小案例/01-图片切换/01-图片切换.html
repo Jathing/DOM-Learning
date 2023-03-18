@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img src="./images/icon_01.png" alt="" />
+
+    <button>上一张</button>
+    <button>下一张</button>
+    <script>
+      //鼠标点击切换图片
+      var imgEle = document.getElementsByTagName('img')[0];
+      var btnEle1 = document.getElementsByTagName('button')[0];
+      var btnEle2 = document.getElementsByTagName('button')[1];
+
+      var index = 1;
+      btnEle1.onclick = function () {
+        index--;
+        if (index < 1) {
+          index = 9;
+        }
+        imgEle.src = `./images/icon_0${index}.png`;
+      };
+      btnEle2.onclick = function () {
+        index++;
+        if (index > 9) {
+          index = 1;
+        }
+        imgEle.src = `./images/icon_0${index}.png`;
+      };
+    </script>
+  </body>
+</html>

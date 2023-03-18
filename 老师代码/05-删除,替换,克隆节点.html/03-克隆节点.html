@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="father">
+        <div class="son">
+            son
+        </div>
+    </div>
+    
+    <script>
+        // 获取元素节点
+        var fatherEle = document.getElementsByClassName('father')[0];
+        var sonEle = document.getElementsByClassName('son')[0];
+
+        // 如果我们想要复制一个现有的元素，可以通过cloneNode方法克隆节点：
+        // 可以传入一个Boolean类型的值，来决定是否是深度克隆；
+        // 深度克隆会克隆对应元素的子元素，否则不会；
+
+        // 浅克隆 
+        var newFather1 = fatherEle.cloneNode();
+        console.log(newFather1);
+
+        // 深克隆
+        var newFather2 = fatherEle.cloneNode(true);
+        console.log(newFather2);
+
+
+
+       
+    </script>
+</body>
+</html>

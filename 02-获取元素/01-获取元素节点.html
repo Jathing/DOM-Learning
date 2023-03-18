@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="box1" class="item">我是box1</div>
+    <div id="box2" class="item">我是box2</div>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <script>
+      console.log(document.getElementById('box1'));
+      var divs = document.getElementsByTagName('div');
+      console.log(divs);
+
+      console.log(Array.isArray(divs));
+      var newArr = Array.from(divs);
+      console.log(Array.isArray(newArr));
+
+      var divEle = document.querySelectorAll('.item');
+      console.log(divEle);
+      console.log(divEle[0]);
+
+      var liEle = document.querySelector('ul li');
+      console.log(liEle);
+
+      var classEle = document.getElementsByClassName('item');
+      console.log(classEle);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./images/icon_01.png" alt="" />
+    <button>上一张</button>
+    <button>下一张</button>
+    <script>
+      var img = document.getElementsByTagName('img')[0];
+      var btn1 = document.getElementsByTagName('button')[0];
+      var btn2 = document.getElementsByTagName('button')[1];
+
+      var index = 1;
+      btn1.onclick = function () {
+        index--;
+        if (index < 1) {
+          index = 9;
+        }
+        img.src = `./images/icon_0${index}.png`;
+      };
+      btn2.onclick = function () {
+        index++;
+        if (index > 9) {
+          index = 1;
+        }
+        img.src = `./images/icon_0${index}.png`;
+      };
+    </script>
+  </body>
+</html>

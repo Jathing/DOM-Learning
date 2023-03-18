@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="father">
+        <div class="son">
+            son
+        </div>
+    </div>
+    <script>
+        // removeChild 只有父元素才有资格删除一个子元素
+        // remove 移除元素我们可以调用元素本身的remove方法：
+        var fatherEle = document.querySelector('.father');
+        var sonEle = document.querySelector('.son')
+
+        // 父元素有权利移除子元素
+        // fatherEle.removeChild(sonEle);
+
+        // sonEle.removeChild(sonEle)  错误
+
+        // 自己移除自己
+        sonEle.remove();
+
+        fatherEle.remove()
+
+
+
+       
+    </script>
+</body>
+</html>

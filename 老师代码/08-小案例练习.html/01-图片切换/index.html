@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./images/icon_01.png" alt="">
+    <br>
+    <button id="pre">上一张</button>
+    <button id="next">下一张</button>
+  
+    <script>
+        // 获取元素
+        var img = document.getElementsByTagName('img')[0];
+        var pre = document.getElementById('pre')
+        var next = document.getElementById('next')
+        
+        // 绑定点击事件
+        var index = 1;
+        // 下一张
+        next.onclick = function(){
+            index++;//当我们点击的时候index+1
+            if(index >= 10){
+                index = 1;
+            }
+            console.log(index);
+            img.src = `./images/icon_0${index}.png`
+
+
+        }
+        // 下一张
+        pre.onclick = function(){
+            index--;//当我们点击时 index-1
+            if(index <= 0 ){
+                index = 9;
+            }
+            img.src = `./images/icon_0${index}.png`
+        }
+
+    </script>
+</body>
+</html>

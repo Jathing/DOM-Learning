@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="father">
+        <div class="son">
+            son
+        </div>
+    </div>
+    
+    <script>
+        // 获取元素节点
+        var fatherEle = document.getElementsByClassName('father')[0];
+        var sonEle = document.getElementsByClassName('son')[0];
+
+        // 需求：创建p节点 p节点替换掉son节点
+        // 创建p节点
+        var pEle = document.createElement('p');
+        pEle.textContent = 'newSon';
+
+        console.log(pEle);
+        // 语法： replaceChild(new,old)
+        
+        // fatherEle.replaceChild(pEle,sonEle)
+
+        fatherEle.replaceChild(sonEle,pEle);//The node to be replaced is not a child of this node.
+
+
+
+
+
+       
+    </script>
+</body>
+</html>

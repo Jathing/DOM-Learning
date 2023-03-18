@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #coder {
+            width: 50px;
+            height: 50px;
+            background: url(./images/e_coder_normal.png);
+            position: fixed;
+            top: 50%;
+            left: 0;
+            /* 光标移入变成小手指 */
+            cursor: pointer;
+        }
+
+        #app {
+            position: absolute;
+            left: 50px;
+            top: -90px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="coder">
+        <div id="app">
+            <img src="./images/xxx.png" alt="">
+        </div>
+    </div>
+
+    <script>
+        // 获取
+        var coder = document.getElementById('coder');
+        var app = document.getElementById('app');
+
+        // 隐藏
+        app.hidden = true;
+
+
+        // 鼠标移动上去的时候显示
+        // 鼠标事件： hover 
+        // 鼠标移动上去  onomouseover
+        // 鼠标离开      onmouseout
+
+        // 鼠标移动上去
+        coder.onmouseover = function () {
+            // 显示
+            app.hidden = false;
+            coder.style.background = 'url(./images/e_coder_selected.png)'
+        }
+
+        // 鼠标离开
+        coder.onmouseout = function () {
+            // 隐藏
+            app.hidden = true;
+            coder.style.background = 'url(./images/e_coder_normal.png)'
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

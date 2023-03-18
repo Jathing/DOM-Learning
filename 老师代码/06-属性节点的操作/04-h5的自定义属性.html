@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 了解 -->
+    <!-- HTML5的data-自定义属性，它们可以在dataset属性中获取到的 -->
+    <div class="father" score="100" data-address="zz" data-age="18"></div>
+   
+   <script>
+        var boxEle = document.querySelector('.father');
+        console.log(boxEle.dataset);//data开头的返回的是一个对象格式
+        console.log(boxEle.dataset.age);
+        console.log(boxEle.dataset.address);
+    
+    </script>
+</body>
+</html>

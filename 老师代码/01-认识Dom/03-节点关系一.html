@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 我是一个注释 -->
+    我是一个文本
+    <div class="box">
+        我是一个div
+    </div>
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+    
+    <script>
+       var bodyEle = document.body;
+       console.log(bodyEle); //获取到整个body元素
+
+       console.log(bodyEle.firstChild);  //第一个子节点 #text 换行节点
+
+       console.log(bodyEle.firstChild.nextSibling);//注释节点  第一个子节点的后兄弟节点
+       
+       console.log(bodyEle.firstChild.nextSibling.nextSibling);//文本节点 第三个子节点  
+      
+       console.log(bodyEle.firstChild.nextSibling.nextSibling.nextSibling);//元素节点 第三个子节点  
+
+       console.log(bodyEle.parentNode);//拿到父节点  html节点
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #box{
+            width: 800px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            padding:20px;
+            box-sizing: border-box;
+        }
+        #content{
+            width: 760px;
+            height: 120px;
+            /* 禁止改变大小 */
+            resize: none;
+        }
+        #ul li{
+            border-bottom: 1px dashed #ccc;
+            color: red;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="box-top">
+            <!-- 多行文本 -->
+            <textarea id="content" name="" id="" cols="30" rows="10"></textarea>
+        </div>
+        <ul id="ul">
+            <!-- <li>1233123</li> -->
+        </ul>
+    </div>
+    <script>
+        // 获取元素
+        var content = document.getElementById('content');
+        var ulEle = document.getElementById('ul');
+        
+        // 事件：onkeyup 键盘抬起来  e  event 叫事件对象
+        // 去掉前后空格 .trim()
+        // 创建节点  createElement()
+        content.onkeyup = function(e){
+            // console.log(e);
+            if(e.code === "Enter"){
+                // 获取输入框的内容
+                var cont = content.value.trim();
+                console.log(cont);
+                // 内容为空的时候不能提交
+                if(cont === ""){
+                    alert('请输入内容');
+                    return;
+                }
+
+                // 创建节点
+                var new_li = document.createElement('li');
+                // 内容放在创建的空li标签中
+                new_li.textContent = cont;
+                console.log(new_li);
+
+                // 挂载节点
+                ulEle.prepend(new_li)
+
+                // 挂载完毕之后清空输入框在中内容
+                content.value = "";
+
+
+
+            }
+            
+        }
+
+       
+    </script>
+</body>
+</html>

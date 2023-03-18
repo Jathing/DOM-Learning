@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #coder {
+      width: 50px;
+      height: 50px;
+      background-image: url(./images/e_coder_normal.png);
+      position: fixed;
+      top: 50%;
+      transform: translateY(-25px);
+      left: 0
+    }
+
+    #app {
+      position: relative;
+      left: 50px;
+      top: -176%
+    }
+  </style>
+</head>
+
+<body>
+  <div id="coder">
+    <div id="app">
+      <img src="./images/xxx.png" alt="">
+    </div>
+  </div>
+  <script>
+    var coder = document.getElementById('coder')
+    var app = document.getElementById('app')
+    app.hidden = true
+
+    coder.onmouseover = function () {
+      app.hidden = false
+      coder.style.background = 'url(./images/e_coder_selected.png)'
+    }
+    coder.onmouseout = function () {
+      app.hidden = true
+      coder.style.background = 'url(./images/e_coder_normal.png)'
+    }
+  </script>
+</body>
+
+</html>

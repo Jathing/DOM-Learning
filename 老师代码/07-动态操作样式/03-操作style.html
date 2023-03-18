@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" style="background-color: gold;color: tomato;">
+        我是一个div
+    </div>
+    
+    <script>
+        // 获取元素
+        var boxEle = document.querySelector('.box');
+        console.log(boxEle.style.backgroundColor);
+        console.log(boxEle.style.color);
+
+        // 设置
+        boxEle.style.color = 'green';
+        boxEle.style.fontSize = '30px';
+
+        // 使用cssText 了解
+        boxEle.style.cssText = 'background-color:pink;font-size:60px'
+        
+
+       
+    </script>
+</body>
+</html>

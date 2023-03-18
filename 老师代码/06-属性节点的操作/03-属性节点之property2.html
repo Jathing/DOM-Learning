@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input type="text" class="ipt" value="">
+   <button>设置input的值</button>
+
+
+   <!-- 标准和非标准 -->
+   <div id="box" title="hehe" score="100" class="boxEle"></div>
+   <div class="son" abc="abc"></div>
+
+   <script>
+     var iptEle = document.getElementsByTagName('input')[0];
+     var btnEle = document.getElementsByTagName('button')[0];
+
+    //  点击button按钮给input设置value值
+    btnEle.onclick = function(){
+        iptEle.value = "hello Dom";//通过property方式去设置value值
+        console.log(iptEle);
+    }
+
+
+    // 非标准的attribute (score) 没有对应的property
+    var boxEle = document.querySelector('#box');
+    console.log(boxEle.getAttribute("score"));//100
+    console.log(boxEle.score);//undefined
+
+    // 标准的attribute(class)
+    console.log(boxEle.getAttribute('class'));//boxEle
+    // 特殊情况
+    console.log(boxEle.className);//boxEle
+
+    console.log(boxEle.getAttribute('id'));//box
+    console.log(boxEle.id);//box
+
+   </script>
+
+   
+</body>
+</html>

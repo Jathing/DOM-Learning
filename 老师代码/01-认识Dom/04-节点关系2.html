@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <!-- 我是一个注释 -->
+      我是一个文本
+      <div class="box">
+          我是一个div
+      </div>
+      <ul>
+          <li>one</li>
+          <li>two</li>
+          <li>three</li>
+      </ul>
+    <script>
+        var bodyEle = document.body;
+        // 拿到第一个元素节点
+       console.log(bodyEle.firstElementChild);  
+
+        //拿到ul元素节点
+        // console.log(bodyEle.lastElementChild);    //拿到script标签
+        console.log(bodyEle.firstElementChild.nextElementSibling);
+       
+        // 拿到li标签
+        // 得到一个伪数组 ，拿到3个li标签，放在一个数组里面
+        console.log(bodyEle.firstElementChild.nextElementSibling.children);
+    </script>
+</body>
+</html>

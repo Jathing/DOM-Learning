@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" style="background-color: yellowgreen;">我是div</div>
+   
+   <script>
+     // 获取元素
+     var boxEle = document.querySelector('.box');
+
+    //  行内样式可以通过打点的方式获取到
+    console.log(boxEle.style.backgroundColor);
+
+    // 外部引入和内部写法通过打点的方式无法获取到
+    console.log(boxEle.style.color);
+
+    // 通过getComputedStyle全局函数获取到外部引入和内部写法
+    console.log(getComputedStyle(boxEle).color);
+
+    </script>
+</body>
+</html>

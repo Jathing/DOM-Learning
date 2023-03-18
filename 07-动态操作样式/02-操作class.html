@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .active {
+        font-size: 30px;
+        color: red;
+        background-color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">我是一个div</div>
+    <button>切换</button>
+    <script>
+      // 获取元素
+      var boxEle = document.querySelector('.box');
+      var btnEle = document.getElementsByTagName('button')[0];
+
+      // 重新命名,将className覆盖掉了
+      boxEle.className = 'active';
+
+      boxEle.classList.add('active'); //添加一个类名
+      boxEle.classList.remove('active'); //添加一个类名
+
+      btnEle.onclick = function () {
+        // 切换 没有就添加 有就删除
+        boxEle.classList.toggle('active');
+        // 判断是否存在 
+        console.log(boxEle.classList.contains('active'));
+      };
+    </script>
+  </body>
+</html>

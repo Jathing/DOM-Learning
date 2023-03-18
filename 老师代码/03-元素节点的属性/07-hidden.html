@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <button id="btn">点击</button>
+   <div class="box" style="color:rgb(3, 3, 3)">hello Dom~</div>
+    <script>
+        //   hidden--用于设置元素隐藏 
+        
+        // 获取节点
+        var btn = document.getElementById('btn'); //获取到点击按钮
+        var divEle = document.getElementsByClassName('box')[0];
+
+        console.log(divEle);
+        // 给btn节点绑定点击事件
+        // btn 事件源
+        // click  点击事件（事件类型）
+        // function(){}  事件处理程序 也叫监听器
+        btn.onclick = function(){
+            // console.log(1111);
+            console.log(divEle.hidden); //false
+            
+            // 第一种方式 if判断
+            // if(divEle.hidden === false){
+            //     divEle.hidden = true;
+            // }else{
+            //     divEle.hidden = false;
+            // }
+
+            // 第二种方式 三元表达式
+            // divEle.hidden === false ? divEle.hidden = true : divEle.hidden = false
+        
+            // 第三种方式  取反
+            divEle.hidden = !divEle.hidden        
+        }
+
+
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .item{
+
+        } */
+    </style>
+</head>
+<body>
+    <div id="box1" class="item">我是div1</div>
+    <div id="box1" class="item">我是div2</div>
+    
+    <p>我是一个p标签</p>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // 通过id名字去获取元素
+        // 获取id名 box1
+        // 及时ID值是一样的，只会获取到第一个元素
+        console.log(document.getElementById('box1'));
+
+        // ---------------------------------------
+
+        // 通过标签面标签名获取元素
+        var divs = document.getElementsByTagName('div');
+        console.log(divs);
+        console.log(Array.isArray(divs));//false  伪数组  --Array.isArray（） 检测数据是否是一个数组
+        var newArr = Array.from(divs);//把伪数组变成真数组 使用Array.from()
+        console.log(Array.isArray(newArr));  //true
+
+        // 通过索引获取
+        console.log(divs[0]); 
+        console.log(divs[1]); 
+       
+       // ---------------------------------------
+       // 通过选择器来选择元素 
+       // querySelectorAll -- 返回的是一个伪数组
+       var divEle = document.querySelectorAll('.item');
+       console.log(divEle);
+       console.log(divEle[0]);
+
+       //querySelector -- 返回的值只有一个
+       var liEle = document.querySelector('ul li');
+       console.log(liEle);
+
+    //    通过类名选择
+    var classEle = document.getElementsByClassName('item');
+    console.log(classEle);
+
+
+
+
+
+
+       
+    </script>
+</body>
+</html>

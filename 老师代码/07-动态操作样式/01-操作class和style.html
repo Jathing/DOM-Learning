@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            color: red;
+            font-size: 30px;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        我是一个div
+    </div>
+    
+    <script>
+    //   JavaScript动态修改样式，有两个选择：
+    //     选择一：在CSS中编写好对应的样式，动态的添加class；
+    //     选择二：动态的修改style属性；
+
+    // 获取元素
+    var boxEle = document.querySelector('.box');
+    // 绑定点击事件
+    boxEle.onclick = function(){
+        // 1)动态操作class
+        // boxEle.className = 'active';
+
+        // 2)动态的修改style属性； 行内
+        boxEle.style.color = 'red';
+        boxEle.style.backgroundColor = 'gold';
+        boxEle.style.fontSize = '30px'
+
+
+    }
+       
+    </script>
+</body>
+</html>

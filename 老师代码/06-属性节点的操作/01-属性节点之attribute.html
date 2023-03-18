@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 标准属性和非标准属性 -->
+    <div class="father" title="hehe" id="box" score="100">
+        <div class="son" abc="abc" age="18">
+        </div>
+    </div>
+    
+    <script>
+        // attribute 是标签层面上的一个概念
+        // 你需要用dom getAttribute和setAttribute 来设置或者获取对应的属性值
+       var boxEle = document.querySelector('#box');
+       console.log(boxEle);
+
+    //    hasAttribute -- 检测是否由此属性
+       console.log(boxEle.hasAttribute('class'));  //t
+       console.log(boxEle.hasAttribute('title'));  //t
+       console.log(boxEle.hasAttribute('name'));   //f
+       console.log(boxEle.hasAttribute('score'));  //t
+
+    //    getAttribute  -- 通过属性名 获取属性值
+       console.log(boxEle.getAttribute('class'));//father
+       console.log(boxEle.getAttribute('score'));//100
+
+    //    setAttribute -- 设置属性
+       boxEle.setAttribute('name','father')
+       boxEle.setAttribute('address','zz')
+   
+       //    removeAttribute -- 删除属性
+       boxEle.removeAttribute('address')
+       boxEle.removeAttribute('title')
+
+    //    得到元素身上的所有的attributes，得到的是一个对象
+       console.log(boxEle.attributes);
+
+
+
+
+    </script>
+</body>
+</html>
