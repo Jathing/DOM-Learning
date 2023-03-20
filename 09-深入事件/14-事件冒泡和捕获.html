@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .warp {
+        width: 400px;
+        height: 400px;
+        background-color: red;
+      }
+      .outer {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+      }
+      .inner {
+        width: 100px;
+        height: 100px;
+        background-color: yellowgreen;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="warp">
+      warp
+      <div class="outer">
+        outer
+        <div class="inner">inner</div>
+      </div>
+    </div>
+    <script>
+      var warp = document.getElementsByClassName('warp')[0];
+      var outer = document.getElementsByClassName('outer')[0];
+      var inner = document.getElementsByClassName('inner')[0];
+
+      //1.事件冒泡:(默认)冒泡传播 从内到外 事件由子级向父级传播 掌握!
+      //2.事件捕获:捕获传播 从外到内 事件由父级向子级传播 基本用不到
+
+      warp.onclick = function () {
+        console.log('warp');
+      };
+      outer.onclick = function () {
+        console.log('outer');
+      };
+      inner.onclick = function () {
+        console.log('inner');
+      };
+    </script>
+  </body>
+</html>

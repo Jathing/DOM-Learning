@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input type="text" id="ipt" />
+    <script>
+      var ipt = document.getElementById('ipt');
+
+      //键盘按下去
+      // e.target.value 获取input框最新值
+      //e event 事件对象
+      ipt.onkeydown = function (e) {
+        // console.log('onkeydown..');
+        // console.log(e);
+      };
+
+      //键盘抬起
+      ipt.onkeyup = function (e) {
+        // console.log('onkeyup..');
+      };
+
+      //键盘抬住
+      ipt.onkeypress = function () {
+        console.log('onkeypress..');
+      };
+
+      //onkeypress和onkeydown的区别
+      //onkeypress 不会触发 alt shift tab
+      //onkeydown 全触发
+    </script>
+  </body>
+</html>

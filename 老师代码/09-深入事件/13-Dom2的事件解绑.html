@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            background-color: red;
+            border: none;
+            cursor: pointer;
+        }
+        .got{
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <button>领取优惠券</button>
+    <script>
+        // 需求：点击的时候变成灰色 ，并且内容改为已领取，不能再点击
+       var btn = document.getElementsByTagName('button')[0];
+       btn.addEventListener('click',function fn(){
+            btn.className = 'got';
+            btn.textContent = '已领取';
+            console.log(111);
+            // dom2的解绑方式
+            btn.removeEventListener('click',fn)
+           
+       });
+       
+
+
+
+           
+      
+    </script>
+</body>
+</html>

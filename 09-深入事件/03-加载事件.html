@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button id="btn">登录</button>
+    <img
+      src="http://47.94.210.129/malulesson/assets/img/005.daf1c0c1.png"
+      alt=""
+    />
+    <script>
+      // load 当我们网页所有资源加载完毕的时候会触发load事件
+      // 事件源是window
+      console.log(window);
+      // console.log(window.onload);
+      console.log(this);
+
+      window.onload = function () {
+        var btn = document.getElementById('btn');
+        var img = document.getElementsByTagName('img')[0];
+        console.log(btn);
+        console.log(img);
+      };
+
+      // DOMContentLoaded加载完毕后就会触发不会等外部资源
+      window.addEventListener('DOMContentLoaded', function () {
+        var btn = document.getElementById('btn');
+        var img = document.getElementsByTagName('img')[0];
+        console.log(btn);
+        console.log(img);
+      });
+
+      // window.addEventListener('DOMContentLoaded',function () {
+
+      // })
+
+      window.addEventListener('DOMContentload', function () {});
+    </script>
+  </body>
+</html>

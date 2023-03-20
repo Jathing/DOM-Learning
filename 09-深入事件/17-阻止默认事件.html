@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="https://www.baidu.com">百度</a>
+
+    <form action="">
+      <input type="text" />
+      <br />
+      <input type="submit" />
+    </form>
+
+    <script>
+      var a = document.getElementsByTagName('a')[0];
+      var form = document.getElementsByTagName('form')[0];
+
+      //阻止a标签的默认事件(点击跳转)
+
+      // dom0方式绑定
+      a.onclick = function (e) {
+        console.log('点击a');
+        // 阻止默认事件 两种方式
+        // e.preventDefault();
+        return false;
+      };
+
+      a.addEventListener('click', function (e) {
+        console.log('点击a');
+        //阻止默认事件 一种方式
+        e.preventDefault();
+        // return false;
+      });
+
+      //-------------------------------
+      //阻止from的默认事件(点击提交刷新)
+      //两种方式都可以 
+      form.onsubmit = function (e) {
+        console.log('点击了提交按钮');
+        // e.preventDefault();
+        return false;
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- 不常用 -->
+    <!-- button是事件源 onclick 事件类型 -->
+
+    <!-- html级别的事件绑定 写在开始标签内  ()必须添加 -->
+    <button onclick="foo()">点我</button>
+    <button onmouseover="fn()">点点我</button>
+    <script>
+      //事件处理程序 也叫监听器
+      //我们说的事件绑定 就是绑定一个监听器
+      function foo() {
+        console.log('绑定成功');
+      }
+
+      function fn() {
+        console.log('我也绑定成功');
+      }
+    </script>
+  </body>
+</html>

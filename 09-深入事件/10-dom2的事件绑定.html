@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .loading {
+        background-color: #ccc;
+        color: #808080;
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="btn">点我</button>
+    <script>
+      // 1.先获取元素
+      var btn = document.getElementById('btn');
+      function foo() {
+        console.log('我是一个监听器');
+      }
+      function test() {
+        console.log('我也是');
+      }
+      var fn1 = function () {
+        console.log('我是一个函数表达式');
+      };
+      // 两次点击事件绑定同一个监听器
+      // 监听器只能处罚一次
+      btn.addEventListener('click', foo);
+      btn.addEventListener('mouseover', foo);
+      btn.addEventListener('click', test);
+      // btn.addEventListener('click', foo);
+      btn.addEventListener('click', fn1);
+    </script>
+  </body>
+</html>

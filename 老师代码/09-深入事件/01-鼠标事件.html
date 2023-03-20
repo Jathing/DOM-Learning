@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">我是一个盒子</div>
+    <script>
+        // 获取元素
+        var box = document.getElementsByClassName('box')[0];
+        
+        // 鼠标单击事件
+        box.onclick = function(){
+            console.log('onclick..');
+        }
+
+        // 鼠标双击事件 double  -dbl
+        box.ondblclick = function(){
+            console.log('ondblclick..');
+        }
+
+        // onmousedown+onmouseup = onclick
+        // 鼠标按下事件 
+        box.onmousedown = function(){
+            console.log('onmousedown..');
+        }
+
+        // 鼠标抬起事件 
+        box.onmouseup = function(){
+            console.log('onmouseup..');
+        }
+
+        // onmouseover + onmouseout = hover
+        // 鼠标移动到元素上
+        box.onmouseover = function(){
+            console.log('onmouseover..');
+        }
+
+        // 鼠标移动到元素上
+        box.onmouseout = function(){
+            console.log('onmouseout..');
+        }
+
+        // 鼠标在元素上移动
+        box.onmousemove = function(){
+            console.log('onmousemove..');
+        }
+
+        // 鼠标右键触发的事件
+        box.oncontextmenu = function(){
+            console.log('oncontextmenu..');
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .loading {
+        background-color: #ccc;
+        color: #808080;
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="btn">加载更多</button>
+    <script>
+      //1.获取元素 获取到的dom节点
+      var btn = document.getElementById('btn');
+
+      //2.绑定
+      // 一个dom节点可以绑定多个不同的事件(监听器)
+      // 一个dom节点不可以绑定多个相同的事件
+      btn.onclick = function () {
+        console.log('onclick..');
+      };
+
+      btn.onmousemove = function () {
+        console.log('onmouseover');
+      };
+
+      // 需求 :点击加载更多变成加载中
+      btn.onclick = function () {
+        btn.classList.add('loading');
+        btn.textContent = '加载中..';
+      };
+
+      // 拓展
+      // 需求:加载中两秒之后 变成加载更多
+      // 延时器:setTimeout    1000ms = 1s
+      // 语法:
+      // setTimeout(function(){
+
+      // })
+      btn.onclick = function () {
+        // 给元素添加类名
+        btn.classList.add('loading');
+        // 给元素替换内容
+        btn.textContent = '加载中..';
+
+        setTimeout(function () {
+          btn.classList.remove('loading');
+          btn.textContent = '加载更多';
+        }, 2000); 
+      };
+    </script>
+  </body>
+</html>

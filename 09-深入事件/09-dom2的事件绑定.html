@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .loading {
+        background-color: #ccc;
+        color: #808080;
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="btn">加载更多</button>
+    <script>
+      // 1.先获取元素
+      var btn = document.getElementById('btn');
+
+      // 绑定(Dom2的事件绑定)
+      //DOM的事件绑定时基于事件池,不是基于属性赋值的,所以可以多邦几次不会覆盖掉
+      // add
+      btn.addEventListener('click', function () {
+        console.log('click...');
+        btn.classList.add('loding');
+        setTimeout(function () {
+          btn.classList.remove('loading');
+          btn.textContent = '加载更多..';
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

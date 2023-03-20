@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="ipt">
+        <input type="submit" id="sbt" >
+        <input type="reset" id="rst" >
+    </form>
+    
+    <script>
+       var form = document.getElementsByTagName('form')[0];
+       var ipt = document.getElementById('ipt');
+
+    //    获取焦点
+    ipt.onfocus = function(){
+        console.log('onfocus..');
+    }
+
+    //    失去焦点
+    ipt.onblur = function(){
+        console.log('onblur..');
+    }
+
+    // 内容发生改变并且失去焦点
+    ipt.onchange = function(){
+        console.log('onchange..');
+    }
+
+    // 内容发生改变并且不失去焦点
+    ipt.oninput = function(){
+        console.log('oninput..');
+    }
+
+    // 事件源必须是form onsubmit  onreset
+
+    // submit 提交按钮
+    // 为什么立马刷新？因为form本身默认事件
+    form.onsubmit = function(){
+        console.log('onsubmit..');
+    }
+
+    // reset 重置按钮
+    // 点击reset 默认事件：把内容清空，没有其他操作
+    form.onreset = function(){
+        console.log('onreset..');
+    }
+
+
+
+
+
+    </script>
+</body>
+</html>

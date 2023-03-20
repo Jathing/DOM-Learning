@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            width: 300px;
+            height: 300px;
+            background-color: yellowgreen;
+        }
+        .outer{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">wrapper
+        <div class="outer">outer
+            <div class="inner">
+                inner
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var wrapper = document.getElementsByClassName('wrapper')[0];
+        var outer = document.getElementsByClassName('outer')[0];
+        var inner = document.getElementsByClassName('inner')[0];
+       
+        // Dom2
+        // 冒泡传播
+         wrapper.addEventListener('click',function(){
+            console.log('wrapper..');
+        })
+        outer.addEventListener('click',function(e){
+            console.log('outer..');
+            e.stopPropagation();
+        })
+        inner.addEventListener('click',function(e){
+            console.log('inner..');
+            // 在目标阶段阻止冒泡
+            e.stopPropagation();
+
+        })
+
+        // Dom0
+        wrapper.onclick = function(){
+            console.log('wrapper');
+        }
+        outer.onclick = function(e){
+            console.log('outer');
+            e.stopPropagation();
+        }
+        inner.onclick = function(e){
+            console.log('inner');
+            e.stopPropagation();
+
+        }
+
+
+    </script>
+</body>
+</html>

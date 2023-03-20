@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <form action="">
+      <input type="text" id="ipt" />
+      <input type="submit" id="sbt" />
+      <input type="reset" id="rbt" />
+    </form>
+    <script>
+      var form = document.getElementsByTagName('form')[0];
+      var ipt = document.getElementById('ipt');
+      var rpt = document.getElementById('rpt');
+
+      //聚焦
+      ipt.onfocus = function () {
+        console.log('onfocus');
+      };
+
+      //是失去焦点
+      ipt.onblur = function () {
+        console.log('onblur');
+      };
+
+      //内容发生更改并且失去焦点
+      ipt.onchange = function () {
+        console.log('oninputfirst');
+      };
+
+      //内容发生改变不失去焦点
+      ipt.oninput = function () {
+        console.log('oninput');
+      };
+
+      //事件源必须是form onsubmit onreset
+      //submit提交按钮
+      //为什么立马刷新 因为from有默认事件
+      form.onsubmit = function () {
+        console.log('onsubmit');
+      };
+
+      form.onreset = function () {
+        console.log('onreset');
+      };
+    </script>
+  </body>
+</html>

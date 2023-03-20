@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        background-color: pink;
+      }
+      .got {
+        background-color: #ccc;
+        border: none;
+        color: #808080;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="btn">领取优惠券</button>
+    <script>
+      //需求点击的时候变成灰色,并且内容改为已领取,不能点击
+      var btn = document.getElementById('btn');
+      btn.onclick = function () {
+        btn.className = 'got';
+        btn.textContent = '已领取';
+
+        // dom0事件解绑
+        // btn.onclick = null
+        btn.onclick = null;
+        // brn.onclick = null;
+      };
+    </script>
+  </body>
+</html>

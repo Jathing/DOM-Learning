@@ -1,111 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Document</title>
-    <link rel="stylesheet" href="./index.css">
-</head>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
 
-<body>
-
+  <body>
     <div class="slider-wrap">
-        <!-- 左侧大图 -->
-        <div class="slider">
-            <ul class="slider-list">
-                <li class="slider-item active">
-                    <a href="">
-                        <img src="./img/1.jpg" alt="">
-                    </a>
-                </li>
-                <li class="slider-item">
-                    <a href="">
-                        <img src="./img/2.jpg" alt="">
-                    </a>
-                </li>
-                <li class="slider-item">
-                    <a href="">
-                        <img src="./img/3.jpg" alt="">
-                    </a>
-                </li>
-                <li class="slider-item">
-                    <a href="">
-                        <img src="./img/4.jpg" alt="">
-                    </a>
-                </li>
-                <li class="slider-item">
-                    <a href="">
-                        <img src="./img/5.jpg" alt="">
-                    </a>
-                </li>
-                <li class="slider-item">
-                    <a href="">
-                        <img src="./img/6.jpg" alt="">
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- 右侧 小图 -->
-        <div class="thumbs">
-            <ul class="thumbs list">
-                <li class="nav-item cur">
-                    <a href="javascript:;">
-                        <img src="./img/1.jpg" alt="">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="javascript:;">
-                        <img src="./img/2.jpg" alt="">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="javascript:;">
-                        <img src="./img/3.jpg" alt="">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="javascript:;">
-                        <img src="./img/4.jpg" alt="">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="javascript:;">
-                        <img src="./img/5.jpg" alt="">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="javascript:;">
-                        <img src="./img/6.jpg" alt="">
-                    </a>
-                </li>
-            </ul>
-        </div>
+      <!-- 左侧大图 -->
+      <div class="slider">
+        <ul class="slider-list">
+          <li class="slider-item active">
+            <a href="">
+              <img src="./img/1.jpg" alt="" />
+            </a>
+          </li>
+          <li class="slider-item">
+            <a href="">
+              <img src="./img/2.jpg" alt="" />
+            </a>
+          </li>
+          <li class="slider-item">
+            <a href="">
+              <img src="./img/3.jpg" alt="" />
+            </a>
+          </li>
+          <li class="slider-item">
+            <a href="">
+              <img src="./img/4.jpg" alt="" />
+            </a>
+          </li>
+          <li class="slider-item">
+            <a href="">
+              <img src="./img/5.jpg" alt="" />
+            </a>
+          </li>
+          <li class="slider-item">
+            <a href="">
+              <img src="./img/6.jpg" alt="" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- 右侧 小图 -->
+      <div class="thumbs">
+        <ul class="thumbs list">
+          <li class="nav-item cur">
+            <a href="javascript:;">
+              <img src="./img/1.jpg" alt="" />
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:;">
+              <img src="./img/2.jpg" alt="" />
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:;">
+              <img src="./img/3.jpg" alt="" />
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:;">
+              <img src="./img/4.jpg" alt="" />
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:;">
+              <img src="./img/5.jpg" alt="" />
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="javascript:;">
+              <img src="./img/6.jpg" alt="" />
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
     <script>
-        //获取元素
-        var slider_items = document.getElementsByClassName('slider-item')
-        var nav_items = document.getElementsByClassName('nav-item')
+      //获取元素
+      var slider_items = document.getElementsByClassName('slider-item');
+      var nav_items = document.getElementsByClassName('nav-item');
 
+      for (let i = 0; i < nav_items.length; i++) {
+        nav_items[i].onmouseover = function () {
+          for (let j = 0; j < nav_items.length; j++) {
+            //排他思想
+            // 清除 cur
+            nav_items[j].className = 'nav-item';
+            // 清除 active
+            slider_items[j].className = 'slider-item';
+          }
 
-        for (let i = 0; i < nav_items.length; i++) {
-            nav_items[i].onmouseover = function () {
-                for (let j = 0; j < nav_items.length; j++) {
-                    //排他思想 
-                    // 清除 cur
-                    nav_items[j].className = 'nav-item'
-                    // 清除 active
-                    slider_items[j].className = 'slider-item'
-                }
-
-                nav_items[i].className = 'nav-item cur'
-                slider_items[i].className = 'slider-item active'
-            }
-        }
-
-
-
-
+          nav_items[i].className = 'nav-item cur';
+          slider_items[i].className = 'slider-item active';
+        };
+      }
     </script>
-</body>
-
+  </body>
+    
 </html>

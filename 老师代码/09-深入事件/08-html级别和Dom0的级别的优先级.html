@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" onclick="test()">加载</button>
+    <script>
+        // Dom0的事件绑定的优先级高于html级别的事件绑定
+        var btn = document.getElementById('btn');
+        btn.onclick = function(){
+            console.log('Dom0的事件绑定');
+        }
+
+        function test(){
+            console.log('html级别事件绑定');
+        }
+
+      
+       
+    </script>
+</body>
+</html>

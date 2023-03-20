@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        color: #fff;
+        background-color: red;
+        border: none;
+        cursor: pointer;
+      }
+      .got {
+        background-color: #ccc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button>领取优惠券</button>
+
+    <script>
+      var btn = document.getElementsByTagName('button')[0];
+      btn.addEventListener('click', function fn() {
+        btn.className = 'got';
+        btn.textContext = '已领取';
+
+        console.log(111);
+        //dom2的解绑方式
+        btn.removeEventListener('click', fn);
+      });
+    </script>
+  </body>
+</html>
