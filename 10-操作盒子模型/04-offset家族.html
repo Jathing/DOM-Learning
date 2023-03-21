@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        background-color: yellowgreen;
+      }
+
+      .box {
+        width: 500px;
+        height: 500px;
+        border: 1px solid red;
+      }
+      .childbox {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        top: 30px;
+        left: 50px;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <div class="childbox"></div>
+    </div>
+    <script>
+      var box = document.getElementsByClassName('box')[0];
+      var childbox = document.getElementsByClassName('childbox')[0];
+
+      console.log(childbox.offsetTop);
+      console.log(childbox.offsetLeft);
+
+      console.log(childbox.offsetParent);
+    </script>
+  </body>
+</html>

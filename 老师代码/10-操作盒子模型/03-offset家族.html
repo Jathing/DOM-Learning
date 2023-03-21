@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            height: 100%;
+            background-color: yellowgreen;
+        }
+        html{
+            height:300%;
+            background-color: yellowgreen;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            padding: 10px 5px;
+            margin: 10px;
+            border-left: 5px solid red ;
+            border-top: 10px solid red;
+            background-color: black;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    
+    <script>
+        // 无论内容是否溢出，clientWidth设置的高+上下padding
+        var box = document.getElementsByClassName('box')[0];
+        // 获取盒子的宽+padding+border
+        console.log(box.offsetWidth); //115
+        // 获取盒子的宽+padding+border
+        console.log(box.offsetHeight); //130
+      
+    </script>
+</body>
+</html>

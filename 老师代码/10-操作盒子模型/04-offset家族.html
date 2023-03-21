@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            height: 100%;
+            background-color: yellowgreen;
+        }
+        html{
+            height:300%;
+            background-color: yellowgreen;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            border: 1px solid red ;
+            /* position: relative; */
+        }
+        .childBox{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            position: absolute;
+            top: 50px;
+            left: 80px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="childBox">
+
+        </div>
+    </div>
+    
+    <script>
+        // 无论内容是否溢出，clientWidth设置的高+上下padding
+        var box = document.getElementsByClassName('box')[0];
+        var childBox = document.getElementsByClassName('childBox')[0];
+        // 获取定位元素相对于父级的偏移量
+        console.log(childBox.offsetTop); //50
+        console.log(childBox.offsetLeft);//80
+        // 获取定位元素的参考点
+        console.log(childBox.offsetParent);
+      
+    </script>
+</body>
+</html>

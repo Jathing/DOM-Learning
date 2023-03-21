@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 600px;
+            height: 600px;
+            border: 2px solid red;
+            padding: 10px;
+            /* 当内容溢出时，出现滚动条 */
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+    </div>
+
+    <script>
+        // 在内容溢出的情况下 
+        // scrollHeight == 真实内容高度 clientHeight == 设置的高度
+        var box = document.getElementsByClassName('box')[0];
+        
+        // scrollTop获取被卷上的高度
+
+        // 滚动条滚动时触发的事件
+        box.onscroll = function(){
+            console.log('内容卷上去的高度',box.scrollTop);
+        }
+        // scrollTop能获取，能设置
+        box.scrollTop = 200;
+
+
+
+
+       
+    </script>
+</body>
+</html>

@@ -34,8 +34,8 @@
         #tab_header ul {
             width: 500px;
             /* display: flex;
-    justify-content: space-around;
-    align-items: center;*/
+                justify-content: space-around;
+                align-items: center;*/
         }
 
         #tab_header ul li {
@@ -46,9 +46,7 @@
 
             /*先占满*/
             padding: 0 1px;
-
             border-bottom: 1px solid #cccccc;
-
             cursor: pointer;
         }
 
@@ -186,6 +184,25 @@
     </div>
 
     <script>
+        // 获取元素
+        var lis = document.getElementById('tab_header').getElementsByTagName('li');
+        var divs = document.getElementsByClassName('dom');
+
+        // 循环绑定
+        for(let i = 0;i < lis.length;i++){
+            lis[i].onmouseover = function(){
+                for(var j = 0 ; j <lis.length;j++){
+                    // 排他思想
+                    lis[j].className = "";
+                    divs[j].className = 'dom'
+
+                }
+                lis[i].className = 'selected';
+                divs[i].className = 'dom current'
+            }
+        }
+
+
 
 
 

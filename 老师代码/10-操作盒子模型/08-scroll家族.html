@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            height: 300%;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        // 绑定scroll事件
+        window.onscroll = function(){
+            console.log('卷上去的高度',document.documentElement.scrollTop);
+        }  
+        
+        // 一张网页卷上去的最大高度：  真实的内容高度 - 当前窗口的高度
+        // 可视区域的高度+卷上去的高度
+        console.log(document.documentElement.scrollHeight - document.documentElement.clientHeight);
+        console.log(document.documentElement.clientHeight);//754
+    </script>
+</body>
+</html>

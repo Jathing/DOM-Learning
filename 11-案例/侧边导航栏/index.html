@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .tool-bar {
+        width: 35px;
+        position: fixed;
+        top: 30%;
+        right: 0;
+      }
+      .item {
+        width: 35px;
+        height: 35px;
+        background-color: #7a6e6e;
+        border-radius: 3px 0 0 3px;
+        margin-bottom: 1px;
+        position: relative;
+      }
+      .icon {
+        background-image: url(../images/toolbars.png);
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+      .icon1 {
+        background-position: -48px 0px;
+      }
+      .icon2 {
+        background-position: -48px -50px;
+      }
+      .icon3 {
+        background-position: -48px -100px;
+      }
+      .icon4 {
+        background-position: -48px -150px;
+      }
+      .item div {
+        width: 0px;
+        height: 35px;
+        background-color: #cd1926;
+        font-size: 12px;
+        position: absolute;
+        right: 36px;
+        top: 0px;
+        text-align: center;
+        line-height: 35px;
+        color: #fff;
+        border-radius: 3px;
+        transition: all 0.2s linear;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="tool-bar">
+      <div class="item">
+        <span class="icon icon1"></span>
+        <div>购物车</div>
+      </div>
+      <div class="item">
+        <span class="icon icon2"></span>
+        <div>收藏</div>
+      </div>
+      <div class="item">
+        <span class="icon icon3"></span>
+        <div>限时活动</div>
+      </div>
+      <div class="item">
+        <span class="icon icon4"></span>
+        <div>大礼包</div>
+      </div>
+    </div>
+    <script>
+      let itemEle = document.getElementsByClassName('item');
+      for (let item of itemEle) {
+        // 鼠标进入
+        item.addEventListener('mouseover', () => {
+          var titleEle = item.children[1];
+          titleEle.style.width = '70px';
+        });
+        // 鼠标离开
+        item.addEventListener('mouseout', () => {
+          var titleEle = item.children[1];
+          titleEle.style.width = '0px';
+        });
+      }
+    </script>
+  </body>
+</html>

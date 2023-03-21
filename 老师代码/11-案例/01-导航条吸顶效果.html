@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        width: 150px;
+        height: 70px;
+      }
+      .other {
+        width: 100%;
+        height: 100px;
+        background-color: tan;
+      }
+      .nav {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        background-color: skyblue;
+      }
+      .banner {
+        width: 100%;
+        height: 2000px;
+        background-color: #ccc;
+      }
+      .fixed {
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+      .m-top {
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="http://47.94.210.129/malulesson/logo.png" alt="" />
+    <!-- 头部广告 -->
+    <div class="other">我是广告</div>
+    <div class="nav">导航条</div>
+    <div class="banner">
+      <p>内容区域1</p>
+      <p>内容区域2</p>
+      <p>内容区域3</p>
+      <p>内容区域</p>
+      <p>内容区域</p>
+      <p>内容区域</p>
+      <p>内容区域</p>
+      <p>内容区域</p>
+      <p>内容区域</p>
+      <p>内容区域</p>
+      <p>内容区域</p>
+      <p>内容区域</p>
+      <p>内容区域</p>
+      <p>内容区域</p>
+      <p>内容区域</p>
+      <p>内容区域</p>
+      <p>内容区域</p>
+    </div>
+
+    <script>
+      // 获取导航条
+      var nav = document.getElementsByClassName('nav')[0];
+      var banner = document.getElementsByClassName('banner')[0];
+      // 获取offsetTop
+      var navOffsetTop = nav.offsetTop;
+
+      console.log(navOffsetTop);
+
+      // 滚动条滚动时触发的事件
+      window.onscroll = function () {
+        // 获取卷上去的高度
+        // var scrollTop = document.documentElement.scrollTop;
+        // console.log(scrollTop);
+        if (window.pageYOffset >= navOffsetTop) {
+          // 动态绑定fixed
+          nav.classList.add('fixed');
+          banner.classList.add('m-top');
+        } else {
+          nav.classList.remove('fixed');
+          banner.classList.remove('m-top');
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button>添加li标签</button>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+    </ul>
+    <script>
+      var btn = document.getElementsByTagName('button')[0];
+      var ul = document.getElementsByTagName('ul')[0];
+      var lis = document.getElementsByTagName('li');
+      // 需求:当我点击按钮的时候 创建一个li 并li+1
+      var lis = document.querySelectorAll('li');
+      btn.onclick = function () {
+        var li = document.createElement('li');
+        console.log(lis);
+        li.textContent = lis.length + 1;
+
+        ul.append(li);
+      };
+
+      // 需求:点击1 打印1 点击2 打印2 ..
+      for (let i = 0; i < lis.length; i++) {
+        // console.log(lis[i]);
+        lis[i].onclick = function () {
+          console.log(lis[i].textContent);
+        };
+      }
+    </script>
+  </body>
+</html>

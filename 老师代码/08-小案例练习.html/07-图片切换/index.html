@@ -82,27 +82,25 @@
         </div>
     </div>
     <script>
-        //获取元素
-        var slider_items = document.getElementsByClassName('slider-item')
-        var nav_items = document.getElementsByClassName('nav-item')
-
+        // 获取元素
+        var navItem = document.getElementsByClassName('nav-item')
+        var sliderItem = document.getElementsByClassName('slider-item')
         
-        for (let i = 0; i < nav_items.length; i++) {
-            nav_items[i].onmouseover = function () {
-                for (let j = 0; j < nav_items.length; j++) {
-                    //
-                    nav_items[j].className = 'nav-item'
-                    slider_items[j].className = 'slider-item'
+        // 循环绑定
+        for(let i = 0;i<navItem.length;i++){
+            navItem[i].onclick = function(){
+                for(let j = 0;j<navItem.length;j++){
+                    // 排他
+                    navItem[j].className="nav-item";
+                    sliderItem[j].className = "slider-item";
                 }
-                nav_items[i].className = 'nav-item cur'
-                slider_items[i].className = 'slider-item active'
+                // 激活样式
+                navItem[i].className = "nav-item cur";
+                sliderItem[i].className = "slider-item active";
             }
         }
-
-
-
-
-    </script>
+        </script>
+   
 </body>
 
 </html>

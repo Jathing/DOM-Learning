@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 600px;
+            height: 600px;
+            border: 2px solid red;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+        <p>box</p>
+    </div>
+
+    <script>
+        // 在内容溢出的情况下 
+        // scrollHeight == 真实内容高度 clientHeight == 设置的高度
+        var box = document.getElementsByClassName('box')[0];
+        console.log(box.scrollWidth);
+        console.log(box.clientWidth);
+
+        console.log(box.scrollHeight);
+        console.log(box.clientHeight);
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>导航栏滚轮效果</title>
+    <style>
+      #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(0);
+      }
+
+      #navbar.hidden {
+        transform: translateY(-100%);
+      }
+      .content {
+        width: 100%;
+        height: 6000px;
+        background: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="content"></div>
+    <script>
+      const navbar = document.getElementById('navbar');
+      let lastScrollPosition = window.pageYOffset;
+
+      window.addEventListener('scroll', () => {
+        const currentScrollPosition = window.pageYOffset;
+        if (currentScrollPosition < lastScrollPosition) {
+          navbar.classList.remove('hidden');
+        } else {
+          navbar.classList.add('hidden');
+        }
+
+        lastScrollPosition = currentScrollPosition;
+      });
+    </script>
+  </body>
+</html>

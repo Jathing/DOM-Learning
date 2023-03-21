@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      .loading {
-        background-color: #cccccc;
-        color: #808080;
-        border: none;
-      }
+         .loading{
+            background-color: #CCCCCC;
+            color: #808080;
+            border: none;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <button id="btn">加载更多</button>
     <script>
-      // 1.先获取元素
-      var btn = document.getElementById('btn');
-      function foo() {
-        console.log('我是一个监听器');
-      }
+        // 1.先获取元素
+        var btn = document.getElementById('btn');
+        function foo() {
+            console.log('我是一个监听器');
+        }
 
-      function test() {
-        console.log('我是一个监听器2');
-      }
+        function test() {
+            console.log('我是一个监听器2');
+        }
 
-      // 两次点击事件绑定同一个监听器
-      // 监听器只能触发一次
-      btn.addEventListener('click', foo);
-      // btn.addEventListener('click',foo);
-      btn.addEventListener('click', test);
+        // 两次点击事件绑定同一个监听器
+        // 监听器只能触发一次
+        btn.addEventListener('click',foo);
+        // btn.addEventListener('click',foo);
+        btn.addEventListener('click',test);
+
+
+
+        
+        
+        
+       
     </script>
-  </body>
+</body>
 </html>
